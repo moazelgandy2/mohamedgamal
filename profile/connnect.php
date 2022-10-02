@@ -6,7 +6,7 @@ $db = 'login';
 $p = '25060';
 
 
-$link = mysqli_connect('$host', '$user', '$pass', '$db',3307);
+$link = mysqli_connect('$host', '$user', '$pass', '$db',25060);
 
 if($conn)
 {
