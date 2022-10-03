@@ -1,4 +1,3 @@
-<!-- Code by Brave Coder - https://youtube.com/BraveCoder -->
 
 <?php
     //Import PHPMailer classes into the global namespace
@@ -25,13 +24,21 @@
         $password = mysqli_real_escape_string($conn, md5($_POST['password']));
         $confirm_password = mysqli_real_escape_string($conn, md5($_POST['confirm-password']));
         $code = mysqli_real_escape_string($conn, md5(rand()));
+        $tim = date("H:i", strtotime("+0 HOURS"));
+        $date = date("Y-m-d", strtotime("+0 HOURS"));
 
         if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
             $msg = "<div class='alert alert-danger'>{$email} - This email address has been already exists.</div>";
         } else {
             if ($password === $confirm_password) {
+
                 $sql = "INSERT INTO users (name, email, password, code) VALUES ('{$name}', '{$email}', '{$password}', '{$code}')";
+                $num=(rand(1,3));
+                $queryy = mysqli_query($conn, "SELECT * FROM timee WHERE time_id");
+
+                $sqll = "INSERT INTO timee ( student_name,email,time , date) VALUES ('{$name}','{$email}', '{$tim}', '{$date}')";
                 $result = mysqli_query($conn, $sql);
+                $result = mysqli_query($conn, $sqll);
 
                 // if ($result) {
                 //     echo "<div style='display: none;'>";
@@ -81,7 +88,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Login Form - Brave Coder</title>
+    <title>Sign Up</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -131,6 +138,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- //form -->
         </div>
@@ -147,6 +155,8 @@
             });
         });
     </script>
+
+
 
 </body>
 

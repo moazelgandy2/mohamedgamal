@@ -18,6 +18,9 @@
     include 'config.php';
     $msg = "";
 
+
+    // $q_student = $conn->query("SELECT * FROM `users` WHERE `name` = 'SESSION_EMAIL'") or die(mysqli_error());
+
     if (isset($_GET['verification'])) {
         if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE code='{$_GET['verification']}'")) > 0) {
             $query = mysqli_query($conn, "UPDATE users SET code='' WHERE code='{$_GET['verification']}'");
@@ -35,9 +38,9 @@
     if (isset($_POST['submit'])) {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, md5($_POST['password']));
-
         $sql = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
         $result = mysqli_query($conn, $sql);
+        
 
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
@@ -45,6 +48,8 @@
             
                 $_SESSION['user_name'] =$roww;
                 $_SESSION['SESSION_EMAIL'] = $email;
+
+                
                 header("Location: ../profile/dashboard.php");
 
         } else {
@@ -57,7 +62,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Login Form - Brave Coder</title>
+    <title>Login </title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
