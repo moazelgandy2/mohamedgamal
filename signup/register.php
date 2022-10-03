@@ -26,19 +26,20 @@
         $code = mysqli_real_escape_string($conn, md5(rand()));
         $tim = date("H:i", strtotime("+0 HOURS"));
         $date = date("Y-m-d", strtotime("+0 HOURS"));
+        
 
         if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
             $msg = "<div class='alert alert-danger'>{$email} - This email address has been already exists.</div>";
         } else {
             if ($password === $confirm_password) {
 
-                $sql = "INSERT INTO users (name, email, password, code) VALUES ('{$name}', '{$email}', '{$password}', '{$code}')";
-                $num=(rand(1,3));
+                $sql = "INSERT INTO users (name, email, password, code,typee) VALUES ('{$name}', '{$email}', '{$password}', '{$code}','not')";
                 $queryy = mysqli_query($conn, "SELECT * FROM timee WHERE time_id");
 
                 $sqll = "INSERT INTO timee ( student_name,email,time , date) VALUES ('{$name}','{$email}', '{$tim}', '{$date}')";
-                $result = mysqli_query($conn, $sql);
                 $result = mysqli_query($conn, $sqll);
+
+                $result = mysqli_query($conn, $sql);
 
                 // if ($result) {
                 //     echo "<div style='display: none;'>";
