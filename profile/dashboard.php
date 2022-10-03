@@ -1,14 +1,28 @@
 <?php
                                 session_start();
+                
                                 if (!isset($_SESSION['SESSION_EMAIL'])) {
                                     header("Location: ../signup/index.php");
                                     die();
                                 }
 
                                 include 'connect.php';
+                                $tim = date("H:i", strtotime("+0 HOURS"));
+                                $date = date("Y-m-d", strtotime("+0 HOURS"));
+                                // echo "Error: " . $sqll . "<br>" . $conn->error;
 
+
+
+
+
+
+
+
+                                mysqli_query($conn,"UPDATE timee SET time = NOW()  WHERE student_name='{$_SESSION['SESSION_EMAIL']}'");
                                 $query = mysqli_query($conn, "SELECT * FROM users WHERE email='{$_SESSION['SESSION_EMAIL']}'");
+                                $queryyy = mysqli_query($conn, "SELECT * FROM users WHERE email='{$_SESSION['SESSION_EMAIL']}'");
                                 $ti = mysqli_query($conn , "SELECT * FROM users WHERE email='{$_SESSION['SESSION_EMAIL']}'")
+
 
                                 // if (mysqli_num_rows($query) > 0) {
                                 //     $row = mysqli_fetch_assoc($query);
@@ -24,6 +38,8 @@
 
                                 $queryy = mysqli_query($conn, "SELECT * FROM users WHERE email='{$_SESSION['SESSION_EMAIL']}'");
                                 $code = mysqli_query($conn, "SELECT * FROM users WHERE code='{$_SESSION['SESSION_EMAIL']}'");   
+                                
+                            
 
 ?>  
 
@@ -108,6 +124,12 @@
                         <span>Question</span>
                         </a>
                     </li>
+                    <li id="ad">
+                        <a class=" d-flex algin-center fs-14 c-black rad-6 p-10" href="">
+                        <i class="fa-solid fa-gears"></i>
+                        <span>Admin</span>
+                        </a>
+                    </li>
                     <li>
                         <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="support.php">
                         <i class="fa-solid fa-headset fa-fw"></i>
@@ -116,7 +138,9 @@
                         </a>
                     </li>
                 </ul>
+
             </div>
+
         </div>
         <div class="content w-full" style="width: 100%;">
             <!-- Start Head -->
@@ -147,50 +171,84 @@
                                 if (mysqli_num_rows($query) > 0) {
                                             $row = mysqli_fetch_assoc($query);
                                             $t = mysqli_fetch_assoc($ti);
-                                            echo " " . $row['name'] . " <a href='../signup/logout.php'>Logout</a>";
+                                            echo " " . $row['name'] ;
+                                            // " <a href='../signup/logout.php'>Logout</a>"
                                         }
+
                             ?></p>
                         </div>
                         <img src="imgs/welcome.png" alt="">
                     </div>
                     
                     <div class="body txt-c d-flex p-20 mt-20 mb-20 block-mobile">
-                        <div style="font-weight:700;"><?php echo $row['name'];?><span class="d-block c-gray fs-14 mt-10"> Student</span></div>
+                        <div style="font-weight:700;"><?php echo $row['name'];?><span class="d-block c-gray fs-14 mt-10">
+                            <span class=" d-block c-green fs-14 mt-10">
+                                        <?php
+                                            $rowww = mysqli_fetch_assoc($queryyy);
+
+                                            if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE typee=''")) > 0) {
+                                                $ms='Admin' ;
+                                                echo $ms;
+                                                
+                                                
+                                            }
+                                            else{
+                                                $Color = "gray";
+                                                $ms2= "Student";
+                                                echo '<div style="Color:'.$Color.'">'.$ms2.'</div>';
+                                                echo "<script>
+                                                const element5 = document.getElementById('ad');
+                                                element5.remove();
+                                                </script>"; 
+                                            }
+                                        
+                                        ?>
+                                    </span>
+                    
+                            </span>
+                        </div>
                         <div style="padding-left: 20px; font-weight:700;">Registered At<span class="d-block c-gray fs-14 mt-10"><?php echo $t['time']; ?></span></div>
+
                         <div style="padding-left: 20px; font-weight:700;" >Account Status
                             
-                            <span id="verif" class=" d-block c-green fs-14 mt-10"><?php
+                            <span id="not" class=" d-block c-green fs-14 mt-10">
+                                    <div id="not">
+                                        <?php
 
-                                if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE code=''")) > 0) {
-                                    $ms='Actice' ;
-                                    echo $ms;
-                                    echo "<script>
-                                    const element = document.getElementById('lo');
-                                    const element2 = document.getElementById('lo2');
-                                    const element3 = document.getElementById('lo3');
-                                    element.remove();
-                                    element2.remove();
-                                    element3.remove();
-                                    </script>";                      
-                                }
-                                else{
-                                    $Color = "red";
-                                    $ms2= "Inactive";
-                                    echo '<div style="Color:'.$Color.'">'.$ms2.'</div>';
+                                            if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE code=''")) > 0) {
+                                                $ms='Actice' ;
+                                                echo $ms;
+                                                echo "<script>
+                                                const element = document.getElementById('lo');
+                                                const element2 = document.getElementById('lo2');
+                                                const element3 = document.getElementById('lo3');
+                                                element.remove();
+                                                element2.remove();
+                                                element3.remove();
+                                                </script>";                      
+                                            }
+                                            else{
+                                                $Color = "red";
+                                                $ms2= "Inactive";
+                                                echo '<div style="Color:'.$Color.'">'.$ms2.'</div>';
 
-                                    echo "<script>
-                                    const element = document.getElementById('ex');
-                                    const element2 = document.getElementById('ex2');
-                                    const element3 = document.getElementById('ex3');
-                                    element.remove();
-                                    element2.remove();
-                                    element3.remove();
-                                    </script>";
-                                }
+                                                echo "<script>
+                                                const element = document.getElementById('ex');
+                                                const element2 = document.getElementById('ex2');
+                                                const element3 = document.getElementById('ex3');
+                                                element.remove();
+                                                element2.remove();
+                                                element3.remove();
+                                                </script>";
+                                            }
 
-                            ?></span>
+
+                                        ?>
+                                    </div>
+                                </span>
+                            
                         </div>
-
+                        
                     </div>
                     <a href="profile.php" class=" btn-shape visit d-block fs-14 bg-blue c-white w-fit " style="padding:4px 10px ; border-radius: 6px;">profile</a>
                 </div>
