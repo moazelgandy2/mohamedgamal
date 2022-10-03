@@ -40,6 +40,8 @@
                 $result = mysqli_query($conn, $sqll);
 
                 $result = mysqli_query($conn, $sql);
+                header("Location: ../signup/index.php");
+
 
                 // if ($result) {
                 //     echo "<div style='display: none;'>";
