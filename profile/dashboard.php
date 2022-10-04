@@ -178,8 +178,7 @@
                                 if (mysqli_num_rows($query) > 0) {
                                             $row = mysqli_fetch_assoc($query);
                                             $t = mysqli_fetch_assoc($ti);
-                                            echo " " . $row['name'] ;
-                                            // " <a href='../signup/logout.php'>Logout</a>"
+                                            echo " " . $row['name'] ." <a href='../signup/logout.php'>Logout</a>";
                                         }
 
                             ?></p>
