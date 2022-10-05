@@ -27,11 +27,11 @@ session_start();
         <h1>MOHAMED GAMAL</h1>
         <h6>PHYSICS TEACHER</h6>
         <div class="row">
-            <a href="../signup/index.php">SignIn &#x27F6</a>
-            <a href="../signup/register.php">SignUp &#x27F6</a>
+            <a href="../live/signup/index.php">SignIn &#x27F6</a>
+            <a href="../live/signup/register.php">SignUp &#x27F6</a>
         </div>
-        
+
     </div>
-    
+
 </body>
 </html>
