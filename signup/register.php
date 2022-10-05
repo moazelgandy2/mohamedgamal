@@ -26,7 +26,7 @@
         $code = mysqli_real_escape_string($conn, md5(rand()));
         $tim = date("H:i", strtotime("+0 HOURS"));
         $date = date("Y-m-d", strtotime("+0 HOURS"));
-        
+        $act = 'no';
 
         if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
             $msg = "<div class='alert alert-danger'>{$email} - This email address has been already exists.</div>";
