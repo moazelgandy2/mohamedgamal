@@ -16,13 +16,13 @@
 			echo "<script>window.location = 'uploadvid.php'</script>";
 		}else{
 			$file = explode(".", $image_name);
-                $file2 = explode(".",$video_name);
+                        $file2 = explode(".",$video_name);
 			$file_ext = end($file);
 			$file2_ext = end($file2);
 			$ext = array("mp4","png", "jpg", "jpeg");
  
 			if(in_array($file_ext, $ext))
-               if(in_array($file2_ext,$ext)){
+                        if(in_array($file2_ext,$ext)){
 				$location = "../profile/upload/".$image_name;
                                 $location2 = "../profile/upload/".$video_name;
 				if(move_uploaded_file($image_temp, $location))
