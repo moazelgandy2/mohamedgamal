@@ -49,6 +49,12 @@
     animation: back 20s linear infinite;
 }
 
+/* Start GEN */
+.btnn:hover{
+    cursor: pointer;
+}
+/* ENd GEN */
+
 @keyframes back{
     100%{
         background-position: 2000px 0 ;

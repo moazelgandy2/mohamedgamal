@@ -86,9 +86,6 @@
     margin-bottom: 20px;
 
 }
-.mb-30{
-    margin-bottom: 30px;
-}
 .gap-20{
     gap: 20px;
 }
@@ -173,6 +170,7 @@
     color: white;
     padding: 4px 10px;
     border-radius: 6px;
+    border: 1px solid;
 }
 /* End Compponnet */
 /* GEN */

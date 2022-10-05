@@ -63,7 +63,7 @@
 <body>
     <div class="page d-flex" >
         <div class="sidebar bg-white p-20 p-relative">
-            <h3 class="p-relative txt-c mt-0">Fourh Dimention</h3>
+            <h3 class="p-relative txt-c mt-0">Admin Dashboard</h3>
 
             <div class="container">
                 <ul>
@@ -75,47 +75,33 @@
                         </a>
                     </li>
                     <li>
-                        <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="profile.php">
-                        <i class="fa-solid fa-user fa-fw"></i>                        
-                        <span>Profile</span>
+                        <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="upload.php">
+                        <i class="fa-solid fa-upload"></i>
+                        <span>Upload</span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="#">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <i class=" pl-10 fa-solid fa-lock" style="padding-left:10px ;"></i>
                         <span>Activating</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li id="ex">
-                        <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="watch1.php">
+                        <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="display.php">
                         <i class="fa-solid fa-chalkboard-user fa-fw"></i>
                         
                         <span>Explanations</span>
                         </a>
                     </li>
-                    <li id="lo">
-                        <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="">
-                        <i class="fa-solid fa-chalkboard-user fa-fw"></i>
-                        <i class=" pl-10 fa-solid fa-lock" style="padding-left:10px ;"></i>
 
-                        
-                        <span>Explanations</span>
-                        </a>
-                    </li>
 
                     <li id="ex2">
                         <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="lectures.php">
                         <i class="fa-solid fa-book-open fa-fw"></i>                    
                         <span>Lectures</span>
                         </a>
-                    <li id="lo2">
-                        <a class=" d-flex algin-center fs-14 c-black rad-6 p-10" href="">
-                        <i class="fa-solid fa-book-open fa-fw"></i>      
-                        <i class=" pl-10 fa-solid fa-lock" style="padding-left:10px ;"></i>              
-                        <span>Lectures</span>
-                        </a>
-                    </li>
+
                     <li id="ex3">
                         <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="question.php">
                         <i class="fa-solid fa-question fa-fw"></i>
@@ -123,27 +109,12 @@
                         <span>Question</span>
                         </a>
                     </li>
-                    <li id="lo3">
-                        <a class=" d-flex algin-center fs-14 c-black rad-6 p-10" href="">
-                        <i class="fa-solid fa-question fa-fw"></i>
-                        <i class=" pl-10 fa-solid fa-lock" style="padding-left:10px ;"></i>
-                        
-                        <span>Question</span>
-                        </a>
-                    </li>
-                    <li id="ad">
+                    <!-- <li id="ad">
                         <a class=" d-flex algin-center fs-14 c-black rad-6 p-10" href="admin.php">
                         <i class="fa-solid fa-gears"></i>
                         <span>Admin</span>
                         </a>
-                    </li>
-                    <li>
-                        <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="support.php">
-                        <i class="fa-solid fa-headset fa-fw"></i>
-                        
-                        <span>Help</span>
-                        </a>
-                    </li>
+                    </li> -->
                 </ul>
 
             </div>

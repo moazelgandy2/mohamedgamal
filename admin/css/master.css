@@ -214,14 +214,6 @@ ul{
 }
 /* End Example pgae */
 /* Watch */
-.lecname{
-    border: 1px solid #CCC;
-    border-radius: 10px;
-    margin-left: 5px;
-    padding-left: 30px;
-    width: 200px;
-    transition: width 0.3s;
-}
 .watch{
     right: -20%;
 }
