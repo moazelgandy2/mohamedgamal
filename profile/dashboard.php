@@ -87,6 +87,13 @@
                         <span>Activating</span>
                         </a>
                     </li>
+                     <li>
+                        <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="../admin/uploadvid.php">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i class=" pl-10 fa-solid fa-lock" style="padding-left:10px ;"></i>
+                        <span>Activating</span>
+                        </a>
+                    </li>
                     <li id="ex">
                         <a class="active d-flex algin-center fs-14 c-black rad-6 p-10" href="watch1.php">
                         <i class="fa-solid fa-chalkboard-user fa-fw"></i>
